@@ -38,8 +38,7 @@ Card.prototype.faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J',
 Card.prototype.suites = [ 'Hearts', 'Spades', 'Diamonds', 'Clubs' ]
 */
 
-let mycard = createCard()
-console.log(mycard.setCard('\u2665 ', '4'))
-//console.log(mycard)
+let mycard = createCard().setCard('\u2665 ', '4')
+console.log(mycard)
 
 exports.creatCard = createCard
