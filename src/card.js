@@ -8,14 +8,14 @@
 'use strict'
 
 const Card = {
-  creatMyCard: function () {
-    let suite = 'hearts'
-    let face = '2'
+  setCard: function (suite, face) {
+    this.suite = suite
+    this.face = face
     return suite + face
   }
 }
 
-let createCard = function (suite = 'hearts', face = '4') {
+let createCard = function () {
   return Object.create(Card, {
     'suite': {
       value: undefined,
@@ -39,7 +39,7 @@ Card.prototype.suites = [ 'Hearts', 'Spades', 'Diamonds', 'Clubs' ]
 */
 
 let mycard = createCard()
-console.log(mycard.creatMyCard())
+console.log(mycard.setCard('\u2665 ', '4'))
 //console.log(mycard)
 
 exports.creatCard = createCard
