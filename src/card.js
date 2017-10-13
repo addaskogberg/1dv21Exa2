@@ -25,7 +25,7 @@ const Card = {
     return this.suite
   },
   getCard: function () {
-    return this.suite + this.face
+    return [this.suite, this.face]
   },
   getFaces: function () {
     return this.faces

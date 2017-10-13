@@ -8,7 +8,7 @@
 'use strict'
 const card = require('./card.js')
 
-function Deck () {
+function Deck (dealerDeck = [], trashDeck = []) {
   this.dealerDeck = []
   this.trashDeck = []
 }
@@ -20,10 +20,21 @@ Deck.prototype.addCards = function () {
   let faces = aCard.getFaces()
   let suites = aCard.getSuites()
 
-  console.log(faces)
-  console.log(suites)
+  faces.forEach(function (faceItem) {
+    suites.forEach(function (suiteItem) {
+      aCard.setCard(suiteItem, faceItem)
+      this.dealerDeck.push(aCard.getCard())
+    }, this)
+  }, this)
 }
 
-let myDeck = new Deck()
+Deck.prototype.getCard = function () {
+  return this.dealerDeck[4]
+}
+
+let myDeck = new Deck([], [])
 myDeck.addCards()
+
+console.log(myDeck.dealerDeck[5])
+
 module.exports = Deck
