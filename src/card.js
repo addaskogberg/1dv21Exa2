@@ -11,7 +11,15 @@ const Card = {
   setCard: function (suite, face) {
     this.suite = suite
     this.face = face
-    return suite + face
+  },
+  getFace: function () {
+    return this.face
+  },
+  getSuite: function () {
+    return this.suite
+  },
+  getCard: function () {
+    return this.suite + this.face
   }
 }
 
@@ -38,7 +46,8 @@ Card.prototype.faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J',
 Card.prototype.suites = [ 'Hearts', 'Spades', 'Diamonds', 'Clubs' ]
 */
 
-let mycard = createCard().setCard('\u2665 ', '4')
-console.log(mycard)
+let mycard = createCard()
+mycard.setCard('\u2665', '4')
+console.log(mycard.getFace() + mycard.getSuite())
 
 exports.creatCard = createCard

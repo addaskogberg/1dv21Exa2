@@ -12,4 +12,5 @@ console.log('\u2665 \u2666 \u2663 \u2660 \u2665 \u2666 \u2663 \u2660 \u2665 \u26
 
 const card = require('./src/card.js')
 let mycard = card.creatCard()
-console.log(mycard.setCard('\u2665 ', '10'))
+mycard.setCard('\u2665', '10')
+console.log(mycard.getCard())
