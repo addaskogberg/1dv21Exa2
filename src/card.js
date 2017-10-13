@@ -12,6 +12,12 @@ const Card = {
     this.suite = suite
     this.face = face
   },
+  setFaces: function () {
+    this.faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ]
+  },
+  setSuites: function () {
+    this.suites = [ 'Hearts', 'Spades', 'Diamonds', 'Clubs' ]
+  },
   getFace: function () {
     return this.face
   },
@@ -20,6 +26,12 @@ const Card = {
   },
   getCard: function () {
     return this.suite + this.face
+  },
+  getFaces: function () {
+    return this.faces
+  },
+  getSuites: function () {
+    return this.suites
   }
 }
 
@@ -39,12 +51,6 @@ let createCard = function () {
     }
   })
 }
-
-/**
-
-Card.prototype.faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ]
-Card.prototype.suites = [ 'Hearts', 'Spades', 'Diamonds', 'Clubs' ]
-*/
 
 let mycard = createCard()
 mycard.setCard('\u2665', '4')
