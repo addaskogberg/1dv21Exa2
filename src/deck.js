@@ -15,7 +15,7 @@ function Deck (dealerDeck = [], trashDeck = []) {
 }
 
 Deck.prototype.addCards = function () {
-  let aCard = card.creatCard()
+  let aCard = card.createCard()
   aCard.setFaces()
   aCard.setSuites()
   let faces = aCard.getFaces()
@@ -48,6 +48,5 @@ console.log(myDeck.dealerDeck[5])
  */
 
 console.log(shuffle([1, 2, 3, 4, 5]))
-
 
 module.exports = Deck

@@ -52,10 +52,10 @@ let createCard = function () {
   })
 }
 
-/** 
+/**
 let mycard = createCard()
 mycard.setCard('\u2665', '4')
 console.log(mycard.getFace() + mycard.getSuite())
 */
 
-exports.creatCard = createCard
+exports.createCard = createCard
