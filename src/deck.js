@@ -7,10 +7,11 @@
 
 'use strict'
 const card = require('./card.js')
+const shuffle = require('fisher-yates')
 
 function Deck (dealerDeck = [], trashDeck = []) {
-  this.dealerDeck = []
-  this.trashDeck = []
+  this.dealerDeck = dealerDeck
+  this.trashDeck = trashDeck
 }
 
 Deck.prototype.addCards = function () {
@@ -28,13 +29,25 @@ Deck.prototype.addCards = function () {
   }, this)
 }
 
-Deck.prototype.getCard = function () {
-  return this.dealerDeck[4]
+Deck.prototype.getCard = function (index) {
+  return this.dealerDeck[index]
 }
 
+Deck.prototype.shuffleDeck = function () {
+  this.dealerDeck = shuffle(this.dealerDeck)
+}
+
+Deck.prototype.shuffleTrash = function () {
+  this.trashDeck = shuffle(this.trashDeck)
+}
+/**
 let myDeck = new Deck([], [])
 myDeck.addCards()
 
 console.log(myDeck.dealerDeck[5])
+ */
+
+console.log(shuffle([1, 2, 3, 4, 5]))
+
 
 module.exports = Deck
