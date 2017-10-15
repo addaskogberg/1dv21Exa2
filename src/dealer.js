@@ -7,22 +7,19 @@
 
 'use strict'
 
-const Deck = require('./deck')
+//const Deck = require('./deck')
 
 class Dealer {
-  constructor () {
+  constructor (deck) {
     this.hand = []
+    this.deck = deck
   }
-  askForNewHand () {
-    return theDeck.getCard()
+  askForNewCard () {
+    return this.deck.getCard()
   }
 }
 
 let dealer = new Dealer()
-console.log(dealer)
-
-let theDeck = new Deck()
-theDeck.addCards()
-theDeck.shuffleDeck()
+//console.log(dealer)
 
 module.exports = Dealer

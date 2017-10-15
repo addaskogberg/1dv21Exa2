@@ -13,7 +13,7 @@ const Card = {
     this.face = face
   },
   setFaces: function () {
-    this.faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ]
+    this.faces = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
   },
   setSuites: function () {
     this.suites = [ 'Hearts', 'Spades', 'Diamonds', 'Clubs' ]
