@@ -30,7 +30,8 @@ Deck.prototype.addCards = function () {
 }
 
 Deck.prototype.getCard = function (index) {
-  return this.dealerDeck[index]
+  //return this.dealerDeck[index]
+  return this.dealerDeck.pop()
 }
 
 Deck.prototype.shuffleDeck = function () {

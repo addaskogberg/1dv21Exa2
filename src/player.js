@@ -17,6 +17,7 @@ let playerCard (){
     player done, dealers turn
 }
 */
+const dealer = require('./dealer')
 class Player {
   constructor () {
     this.hand = []
@@ -33,12 +34,12 @@ class Player {
   }
   drawCard () {
     while (this.getSum() < 15) {
-
+      this.hand = dealer.askForNewCard()
     }
   }
 }
 
-let player = new Player()
-console.log(player)
+//let player = new Player()
+//console.log(player)
     // Exports
 module.exports = Player

@@ -16,10 +16,10 @@ let myDeck = new Deck()
 myDeck.addCards()
 myDeck.shuffleDeck()
 
-console.log(myDeck.getCard(0))
-console.log(myDeck.getCard(1))
-console.log(myDeck.getCard(23))
-console.log(myDeck.getCard(51))
+console.log(myDeck.getCard())
+console.log(myDeck.getCard())
+console.log(myDeck.getCard())
+console.log(myDeck.getCard())
 
 /**
 let mycard = card.creatCard()
