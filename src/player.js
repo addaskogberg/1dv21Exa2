@@ -7,20 +7,11 @@
 
 'use strict'
 
-/**
- * player gets new card until sum is 15
-
-let playerCard (){
-    if (playerCard =15){
-        player get new card
-    }else
-    player done, dealers turn
-}
-*/
-
 class Player {
   constructor () {
     this.hand = []
+    this.handValue = 0
+    this.aces = 0
   }
   getHand () {
     return this.hand
@@ -34,10 +25,21 @@ class Player {
   }
   addCard (card) {
     this.hand.push(card)
+    this.translateFaces(card)
+  }
+  translateFaces (card) {
+    if (card[1] === 'A') {
+      this.handValue += 14
+      this.aces += 1
+    } else if (card[1] === 'J') {
+      this.handValue += 11
+    } else if (card[1] === 'Q') {
+      this.handValue += 12
+    } else if (card[1] === 'K') {
+      this.handValue += 13
+    }
   }
 }
 
-//let player = new Player()
-//console.log(player)
     // Exports
 module.exports = Player
