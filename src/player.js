@@ -13,9 +13,14 @@ class Player {
     this.handValue = 0
     this.aces = 0
   }
-  getHand () {
-    return this.hand
+  getHandString () {
+    let handString = ''
+    for (let i = 0; i < this.hand.length; i++) {
+      handString += this.hand[i][0] + this.hand[i][1] + ' '
+    }
+    return handString
   }
+
   getSum () {
     return this.handValue
   }
