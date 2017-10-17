@@ -25,4 +25,4 @@ let dealer = new Dealer(myDeck)
 while (player.getSum() < 15) {
   player.addCard(dealer.askForNewCard())
 }
-console.log(player.getHandString() + player.getSum())
+console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')')
