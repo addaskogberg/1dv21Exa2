@@ -41,13 +41,5 @@ Deck.prototype.shuffleDeck = function () {
 Deck.prototype.shuffleTrash = function () {
   this.trashDeck = shuffle(this.trashDeck)
 }
-/**
-let myDeck = new Deck([], [])
-myDeck.addCards()
-
-console.log(myDeck.dealerDeck[5])
- */
-
-//console.log(shuffle([1, 2, 3, 4, 5]))
 
 module.exports = Deck

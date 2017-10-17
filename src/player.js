@@ -17,12 +17,9 @@ class Player {
     return this.hand
   }
   getSum () {
-    let sum = 0
-    for (let i = 0; i < this.hand.length; i++) {
-      sum += this.hand[i][1]
-    }
-    return sum
+    return this.handValue
   }
+
   addCard (card) {
     this.hand.push(card)
     this.translateFaces(card)

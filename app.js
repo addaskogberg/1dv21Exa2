@@ -22,24 +22,8 @@ myDeck.shuffleDeck()
 let player = new Player()
 let dealer = new Dealer(myDeck)
 
-//console.log(dealer.askForNewCard())
-
 while (player.getSum() < 15) {
   console.log(player.getSum())
   player.addCard(dealer.askForNewCard())
 }
 console.log(player.getSum())
-
-/**
-console.log(myDeck.getCard())
-console.log(myDeck.getCard())
-console.log(myDeck.getCard())
-console.log(myDeck.getCard())
- */
-
-/**
-let mycard = card.creatCard()
-mycard.setCard('\u2665', '10')
-console.log(mycard.getCard())
-const card = require('./src/card.js')
-*/
