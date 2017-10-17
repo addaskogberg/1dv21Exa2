@@ -47,6 +47,14 @@ class Player {
       this.handValue += parseInt(card[1])
     }
   }
+
+  isBusted () {
+    if (this.getSum() > 21) {
+      return true
+    } else 
+      return false
+    }
+  }
 }
 
     // Exports

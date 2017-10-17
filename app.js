@@ -25,7 +25,11 @@ let dealer = new Dealer(myDeck)
 while (player.getSum() < 15) {
   player.addCard(dealer.askForNewCard())
 }
-console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')')
+if (player.isBusted()) {
+  console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')' + 'Busted')
+} else {
+  console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')')
+}
 
 if (player.getSum() > 21) {
   console.log('Dealer: - ')
@@ -33,8 +37,13 @@ if (player.getSum() > 21) {
   while (dealer.player.getSum() < 15) {
     dealer.player.addCard(dealer.askForNewCard())
   }
-  console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')')
+  if (dealer.player.isBusted()) {
+    console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')' + 'Busted')
+  } else {
+    console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')')
+  }
 }
+
 if (player.getSum() > 21) {
   console.log('Dealer wins!')
 } else if (dealer.player.getSum() > 21) {
