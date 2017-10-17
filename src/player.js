@@ -37,6 +37,8 @@ class Player {
       this.handValue += 12
     } else if (card[1] === 'K') {
       this.handValue += 13
+    } else {
+      this.handValue += parseInt(card[1])
     }
   }
 }
