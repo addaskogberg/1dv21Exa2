@@ -51,7 +51,7 @@ class Player {
   isBusted () {
     if (this.getSum() > 21) {
       return true
-    } else 
+    } else {
       return false
     }
   }
