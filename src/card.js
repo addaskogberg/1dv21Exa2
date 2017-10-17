@@ -13,10 +13,10 @@ const Card = {
     this.face = face
   },
   setFaces: function () {
-    this.faces = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+    this.faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ]
   },
   setSuites: function () {
-    this.suites = [ 'Hearts', 'Spades', 'Diamonds', 'Clubs' ]
+    this.suites = [ '\u2665', '\u2666', '\u2663', '\u2660' ]
   },
   getFace: function () {
     return this.face
@@ -51,11 +51,5 @@ let createCard = function () {
     }
   })
 }
-
-/**
-let mycard = createCard()
-mycard.setCard('\u2665', '4')
-console.log(mycard.getFace() + mycard.getSuite())
-*/
 
 exports.createCard = createCard
