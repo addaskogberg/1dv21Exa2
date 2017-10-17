@@ -22,6 +22,10 @@ class Player {
   }
 
   getSum () {
+    if (this.handValue > 21 && this.aces > 0) {
+      this.handValue -= 13
+      this.aces -= 1
+    }
     return this.handValue
   }
 
