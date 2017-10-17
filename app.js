@@ -26,3 +26,21 @@ while (player.getSum() < 15) {
   player.addCard(dealer.askForNewCard())
 }
 console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')')
+
+if (player.getSum() > 21) {
+  console.log('Dealer: - ')
+} else {
+  while (dealer.player.getSum() < 15) {
+    dealer.player.addCard(dealer.askForNewCard())
+  }
+  console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')')
+}
+if (player.getSum() > 21) {
+  console.log('Dealer wins!')
+} else if (dealer.player.getSum() > 21) {
+  console.log('Player wins!')
+} else if (player.getSum() > dealer.player.getSum()) {
+  console.log('Player wins!')
+} else {
+  console.log('Dealer wins!')
+}
