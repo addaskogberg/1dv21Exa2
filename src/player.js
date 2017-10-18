@@ -56,6 +56,14 @@ class Player {
     }
   }
 
+  hasFiveCards () {
+    if (this.hand.length >= 5) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   emptyHand () {
     let cards = []
     for (let i = 0; i < this.hand.length; i++) {

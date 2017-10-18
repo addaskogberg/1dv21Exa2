@@ -49,6 +49,8 @@ for (let i = 0; i < 20; i++) {
     console.log('Dealer wins!')
   } else if (dealer.player.getSum() > 21) {
     console.log('Player wins!')
+  } else if (player.hasFiveCards()) {
+    console.log('Player wins with five cards!')
   } else if (player.getSum() > dealer.player.getSum()) {
     console.log('Player wins!')
   } else {
@@ -64,4 +66,3 @@ function PrepareNewRound () {
     myDeck.addToTrash(cards[i])
   }
 }
-
