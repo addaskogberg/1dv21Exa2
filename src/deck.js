@@ -30,7 +30,14 @@ Deck.prototype.addCards = function () {
 }
 
 Deck.prototype.getCard = function (index) {
-  //return this.dealerDeck[index]
+  if (this.dealerDeck.length === 1) {
+    for (let i = 0; i < this.trashDeck.length; i++) {
+      this.dealerDeck.push(this.trashDeck[i])
+    }
+    shuffle(this.dealerDeck)
+    console.log('korten är slut hämtar nya')
+    console.log()
+  }
   return this.dealerDeck.pop()
 }
 
@@ -40,6 +47,10 @@ Deck.prototype.shuffleDeck = function () {
 
 Deck.prototype.shuffleTrash = function () {
   this.trashDeck = shuffle(this.trashDeck)
+}
+
+Deck.prototype.addToTrash = function (card) {
+  this.trashDeck.push(card)
 }
 
 module.exports = Deck

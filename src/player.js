@@ -55,7 +55,18 @@ class Player {
       return false
     }
   }
-}
+
+  emptyHand () {
+    let cards = []
+    for (let i = 0; i < this.hand.length; i++) {
+      cards.push(this.hand[i])
+    }
+    this.hand = []
+    this.handValue = 0
+    this.aces = 0
+    return cards
+  }
+  }
 
     // Exports
 module.exports = Player

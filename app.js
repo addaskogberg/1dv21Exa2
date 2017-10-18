@@ -22,34 +22,46 @@ myDeck.shuffleDeck()
 let player = new Player()
 let dealer = new Dealer(myDeck)
 
-while (player.getSum() < 15) {
-  player.addCard(dealer.askForNewCard())
-}
-if (player.isBusted()) {
-  console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')' + 'Busted')
-} else {
-  console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')')
-}
-
-if (player.getSum() > 21) {
-  console.log('Dealer: - ')
-} else {
-  while (dealer.player.getSum() < 15) {
-    dealer.player.addCard(dealer.askForNewCard())
+for (let i = 0; i < 20; i++) {
+  while (player.getSum() < 15) {
+    player.addCard(dealer.askForNewCard())
   }
-  if (dealer.player.isBusted()) {
-    console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')' + 'Busted')
+  if (player.isBusted()) {
+    console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')' + 'Busted')
   } else {
-    console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')')
+    console.log('Player #1: ' + player.getHandString() + '(' + player.getSum() + ')')
+  }
+
+  if (player.getSum() > 21) {
+    console.log('Dealer: - ')
+  } else {
+    while (dealer.player.getSum() < 15) {
+      dealer.player.addCard(dealer.askForNewCard())
+    }
+    if (dealer.player.isBusted()) {
+      console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')' + ' Busted')
+    } else {
+      console.log('Dealer: ' + dealer.player.getHandString() + '(' + dealer.player.getSum() + ')')
+    }
+  }
+
+  if (player.getSum() > 21) {
+    console.log('Dealer wins!')
+  } else if (dealer.player.getSum() > 21) {
+    console.log('Player wins!')
+  } else if (player.getSum() > dealer.player.getSum()) {
+    console.log('Player wins!')
+  } else {
+    console.log('Dealer wins!')
+  }
+  console.log()
+  PrepareNewRound()
+}
+
+function PrepareNewRound () {
+  let cards = player.emptyHand()
+  for (let i = 0; i < cards.length; i++) {
+    myDeck.addToTrash(cards[i])
   }
 }
 
-if (player.getSum() > 21) {
-  console.log('Dealer wins!')
-} else if (dealer.player.getSum() > 21) {
-  console.log('Player wins!')
-} else if (player.getSum() > dealer.player.getSum()) {
-  console.log('Player wins!')
-} else {
-  console.log('Dealer wins!')
-}
