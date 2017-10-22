@@ -102,5 +102,5 @@ class Player {
   }
   }
 
-    // Exports
+    // Exports player
 module.exports = Player

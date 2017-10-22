@@ -37,17 +37,29 @@ const Card = {
     return [this.suite, this.face]
   },
   /**
+   * getter for instance faces as part of creation of the deck
+   * @returns {array} all faces
    */
   getFaces: function () {
     return this.faces
   },
   /**
+   * getter for instance of faces as part of the creation of the deck
+   * @returns {array} all suites
    */
   getSuites: function () {
     return this.suites
   }
 }
 /**
+ * @return {object} object card cointaining suit and face
+ * @param  {true} writable
+ * @param  {true} enumerable
+ * @param  {true}} configurable
+ * @param  {true} writable
+ * @param  {true} enumerable
+ * @param  {true}} configurable
+ * @returns true
  */
 let createCard = function () {
   return Object.create(Card, {
@@ -66,4 +78,5 @@ let createCard = function () {
   })
 }
 
+// exports
 exports.createCard = createCard
